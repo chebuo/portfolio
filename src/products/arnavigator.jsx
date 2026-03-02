@@ -1,18 +1,24 @@
-import {useState} from 'react'
-import { Document, Page, pdfjs } from "react-pdf";
+import {Swiper,SwiperSlide} from "swiper/react";
+import { Pagination, Mousewheel,Keyboard,Navigation,  } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./gamePage.css"
-import arnavigatorPages from '../assets/arnavigator.pdf?url'
+import "./slidePage.css"
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+import slide_1 from '../assets/arnavigator_1.png'
+import slide_2 from '../assets/arnavigator_2.png'
+import slide_3 from '../assets/arnavigator_3.png'
+import slide_4 from '../assets/arnavigator_4.png'
+import slide_5 from '../assets/arnavigator_5.png'
+import slide_6 from '../assets/arnavigator_6.png'
+
 const Arnavigator=()=>{
     return(
         <>
             <div className="page-scale">
                 <Header/>
-                <PdfViewer/>
+                <SlideViewer/>
                 <Description/>
             </div>
         </>  
@@ -20,73 +26,58 @@ const Arnavigator=()=>{
 const Header=()=>{
     return(
         <div>
-            <h2>大きなカブトムシ</h2>
+            <h2>ARナビゲーター</h2>
         </div>
     )
 }
 const Description=()=>{
     return(
         <div>
-            <h2>ゲーム概要</h2>
+            <h2>作品概要</h2>
             <ul>
-                <li>このゲームは2D横スクロールRUNゲームです。</li>
-                <li>障害物に当たるか、石鹸が小さくなると終わります。</li>
-                <li>石鹸は地面についているとき、水中にいるときに小さくなります。</li>
-            </ul>
-            <h2>操作説明</h2>
-            <ul>
-                <li>スマホは画面をタップ、PCはSPACEまたは、クリックでスタート</li>
-                <li>赤いゲージが溜まると石鹸がジャンプ</li>
-                <li>水中だとジャンプ力2倍</li>
+                <li>AR上で目的地に行くための方角をコンパスで指すwebアプリです。</li>
+                <li>コンパスは経路を指すので、途中で迷子になることがないです。</li>
             </ul>
             <h2>使用技術</h2>
             <ul>
-                <li>unity,UI Tool Kit,ObjectPool</li>
+                <li>JavaScript,A-Flame,AR.js,Google cloud API</li>
             </ul>
             <h2>制作背景</h2>
             <ul>
-                <li>初めて作ったゲームだったので様々なところで詰まりました。</li>
-                <li>特に印象に残っている詰まったところは当たり判定に関するところです。このゲームの地面はたくさんのタイルマップで作られています。</li>
-                <li>なので、一つ一つのタイルの高さが若干異なり、石鹸の接地判定が取りずらくなっています。</li>
-                <li>これによって、うまくジャンプすることができないバグが生まれました。</li>
-                <li>普通にコライダーを使う方法で安定させることは障害物との接触判定などと干渉してできないので、Raycastを使用しました。</li>
-                <li>これによって、一番の問題だったうまくジャンプできないバグは解決しました。</li>
+                <li>このアプリ開発で初めてjavaScript、API連携をしました。</li>
+                <li>javaScriptはC#とは書き方がかけ離れていたので、かなり戸惑いました。</li>
+                <li>ですが、一番詰まったところはjavaScriptではなくA-Flame関係でした。</li>
+                <li>まず、このアプリはAR上でコンパスを写し、取得した方角から向きを決めなければいけません。</li>
+                <li>なので、A-Flameにあった方角を取得できる機能を使おうとしたら、動かなくて使えませんでした。</li>
+                <li>それ以外にも、画面をドラックすると3Dモデルが動くことがわかりました。</li>
+                <li>つまり、緯度、経度を指定して配置しても意味がないということです。</li>
+                <li>このような、たくさんの欠陥があるフレームワークを土台にして開発していたので完成しませんでした。</li>
+                <li>ですが、このハッカソンはweb開発を始める良いきっかけになったので、今ではとても満足しています。</li>
+                <li>ちなみに、このアプリはあと方角とARの部分ができれば完成だったのですが、知らないところでチームメイトが完成させていました。</li>
             </ul>
         </div>
     )
 }
 
-const PdfViewer=()=>{
-    const [totalPages,setTotalPages]=useState(0);
-    const onLoadSuccess=({numPages})=>{
-        setTotalPages(numPages);
-    }
-    const pdfContents=[];
-    for(let i=0;i<totalPages;i++){
-        const d=(
-            <Page key={i}
-                pageNumber={i+1}
-                width={300}
-            />
-        );
-        pdfContents.push(d);
-    }
-    console.log(arnavigatorPages);
+const SlideViewer=()=>{
+    const data = [slide_1, slide_2, slide_3,slide_4,slide_5,slide_6];
     return(
-        <div style={{
-                width: "100%",
-                height: "100%",
-                overflow: 'scroll',
-                paddingTop: '32px'
-            }}>
-                <Document
-                    file={arnavigatorPages}
-                    onLoadSuccess={onLoadSuccess}
-                    
-                >
-                    {pdfContents}
-                </Document>
-            </div>
-    )
+        <Swiper
+            slidesPerView={1}
+            navigation={true}
+            Keyboard={true}
+            Mousewheel={true}
+            pagination={{
+                clickable:true,
+            }}
+            modules={[Pagination,Mousewheel,Keyboard,Navigation]}
+            >
+                {data.map((d,i)=>(
+                    <SwiperSlide key={i}>
+                        <img src={d}/>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        )
 }
 export default Arnavigator
