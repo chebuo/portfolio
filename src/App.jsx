@@ -79,11 +79,13 @@ function App() {
       <Route path={data.path} element={<data.element/>}></Route>
     ))}
 
-    <Route path="/eight_wall" element={<iframe
-  src="https://chebuo.vercel.app/eight_wall"
-  allowfullscreen
-  allow="camera; microphone; geolocation; accelerometer; magnetometer; gyroscope; autoplay; clipboard-read; clipboard-write; fullscreen"
-></iframe>}></Route>
+    <Route path="/eight_wall" element={
+      <iframe
+      src="/eight_wall/artest.html"
+      allowfullscreen
+      allow="camera; microphone; geolocation; accelerometer; magnetometer; gyroscope; autoplay; clipboard-read; clipboard-write; fullscreen"
+    ></iframe>}>
+</Route>
    </Routes>
   )
 }
