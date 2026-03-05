@@ -6,10 +6,10 @@ const Eight_wall=()=>{
             <div className="page-scale">
                 <Header/>
 <iframe
-      src="/eight_wall/artest.html"
-      allowFullscreen
-      allow="camera; microphone; geolocation; accelerometer; magnetometer; gyroscope; autoplay; clipboard-read; clipboard-write; fullscreen"
-    ></iframe>
+  src="https://chebuo.vercel.app/eight_wall"
+  allowFullscreen
+  allow="camera; microphone; geolocation; accelerometer; magnetometer; gyroscope; autoplay; clipboard-read; clipboard-write; fullscreen"
+></iframe>
                 <Description/>
             </div>
         </>  
