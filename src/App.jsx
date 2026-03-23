@@ -6,8 +6,6 @@ import {data} from './data/projects.js'
 import ProductList from './components/productList.jsx'
 import History from './pages/history.jsx'
 
-import Eight_wall from './pages/eight_wall.jsx'
-
 import github from './assets/github_icon.png'
 import x from './assets/x_icon.png'
 import unityroom from './assets/unityroom_icon.jpg'
@@ -80,9 +78,6 @@ function App() {
     {data.map((data)=>(
       <Route path={data.path} element={<data.element/>}></Route>
     ))}
-
-    <Route path="/eight_wall" element={<Eight_wall/>}>
-</Route>
    </Routes>
   )
 }
