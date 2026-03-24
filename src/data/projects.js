@@ -39,8 +39,12 @@ export const data=[
         element:Soapslider,
     },
     {
+        date:"2024年6月",
+        description:"posingEffect"
+    },
+    {
         date:"2024年7月",
-        title:"大きなカブトムシ",
+        title:"大きなカブトムシ β版",
         icon:bigbeetle_icon,
         description:'大きなカブを食べられないようにカブトムシを倒すタワーディフェンスとシューティングゲームを組み合わせたゲームです。',
         technology:["個人開発","unity","UIToolKit","ObjectPool"],
@@ -129,6 +133,18 @@ export const data=[
         element:Kurimanju
     },
     {
+        date:"2025年5月",
+        description:"起承転ちぇぶ"
+    },
+    {
+        date:"2025年6月",
+        description:"exiting ski"
+    },
+    {
+        date:"2025年8月",
+        description:"readMaker"
+    },
+    {
         date:"2025年8月",
         title:"限界日記",
         icon:limit_diary_icon,
@@ -136,5 +152,33 @@ export const data=[
         technology:["チーム開発","unity"],
         path:"/limit_diary",
         element:Limit_diary
+    },
+    {
+        date:"2025年8月",
+        description:"3Dbaseball"
+    },
+    {
+        date:"2025年9月",
+        description:"memobattle"
+    },
+    {
+        date:"2025年10月",
+        description:"入退室管理"
+    },
+    {
+        date:"2026年1月",
+        description:"bigbeetle"
+    },
+    {
+        date:"2026年2月",
+        description:"mymemo"
+    },
+    {
+        date:"2026年3月",
+        description:"8th wall"
+    },
+    {
+        date:"2026年3月",
+        description:"チェブわーつレガシー",
     }
 ]
