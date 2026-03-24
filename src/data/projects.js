@@ -7,6 +7,7 @@ import Kirby from '../products/kirby.jsx'
 import Cheburashka from '../products/cheburashka.jsx'
 import Arcodemodel from '../products/arcodemodel.jsx'
 import Arnavigator from '../products/arnavigator.jsx'
+import Music_searcher from '../products/music_searcher.jsx'
 import Kurimanju from '../products/kurimanju.jsx'
 import Limit_diary from '../products/limit_diary.jsx'
 
@@ -19,6 +20,7 @@ import kirby_icon from '../assets/kirby_icon.png'
 import cheburashka_icon from '../assets/cheburashka_icon.png'
 import arcodemodel_icon from '../assets/arcodemodel_icon.png'
 import arnavigator_icon from '../assets/arnavigator_icon.png'
+import music_searcher_icon from '../assets/music_searcher_icon.png'
 import kurimanju_icon from '../assets/kurimanju_icon.png'
 import limit_diary_icon from '../assets/limit_diary_icon.png'
 
@@ -107,6 +109,15 @@ export const data=[
         technology:["チーム開発","ハッカソン","JavaScript","A-Flame","AR.js","gitpages"],
         path:"/arnavigator",
         element:Arnavigator
+    },
+    {
+        date:"2025年2月",
+        title:"MusicSearcher",
+        icon:music_searcher_icon,
+        description:"",
+        technology:["チーム開発","ハッカソン","React","JavaScript","gitpages"],
+        path:"/musicSearcher",
+        element:Music_searcher
     },
     {
         date:"2025年3月",
