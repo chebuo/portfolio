@@ -10,6 +10,7 @@ import Arnavigator from '../products/arnavigator.jsx'
 import Music_searcher from '../products/music_searcher.jsx'
 import Kurimanju from '../products/kurimanju.jsx'
 import Limit_diary from '../products/limit_diary.jsx'
+import Bigbeetle_full from '../products/bigbeetle_full.jsx'
 
 import soapslider_icon from '../assets/soapslider_icon.jpg'
 import bigbeetle_icon from '../assets/bigbeetle_icon.jpg'
@@ -47,7 +48,7 @@ export const data=[
         title:"大きなカブトムシ β版",
         icon:bigbeetle_icon,
         description:'大きなカブを食べられないようにカブトムシを倒すタワーディフェンスとシューティングゲームを組み合わせたゲームです。',
-        technology:["個人開発","unity","UIToolKit","ObjectPool"],
+        technology:["個人開発","unity"],
         path:"/bigbeetle",
         element:Bigbeetle
     },
@@ -64,7 +65,7 @@ export const data=[
         date:"2024年11月",
         title:"チェブラーシカから部室を守れ！！",
         icon:chebusitu_icon,
-        description:'ハッカソンでコーディングをしっかりした初めての作成した作品です。このゲームはチェブラーシカというキャラクターを使ったミニゲームです。たくさんのかわいいチェブラーシカが登場します。',
+        description:'ハッカソンでコーディングをしっかりした初めての作成した作品です。たくさんのかわいいチェブラーシカが登場します。',
         technology:["チーム開発","ハッカソン","unity","DoTween"],
         path:"/chebusitu",
         element:Chebusitu
@@ -167,7 +168,12 @@ export const data=[
     },
     {
         date:"2026年1月",
-        description:"bigbeetle"
+        title:"大きなカブとムシ 完全版",
+        icon:bigbeetle_icon,
+        description:"",
+        technology:["個人開発","unity","UIToolKit","ObjectPool","scriptableObject","Input System"],
+        path:"/bigbeetle_full",
+        element:Bigbeetle_full
     },
     {
         date:"2026年2月",

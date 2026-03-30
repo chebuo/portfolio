@@ -1,57 +1,53 @@
-import {Unity,useUnityContext}from 'react-unity-webgl'
 import "../styles/gamePage.css"
 
 const Bigbeetle=()=>{
-    const {unityProvider,requestFullscreen}=useUnityContext({
-        loaderUrl:"build/SoapSlider_disable.loader.js",
-        dataUrl:"build/SoapSlider_disable.data",
-        frameworkUrl:"build/SoapSlider_disable.framework.js",
-        codeUrl:"build/SoapSlider_disable.wasm",
-    })
     return(
         <>
             <div className="page-scale">
                 <Header/>
-                <Unity unityProvider={unityProvider} className="unity-canvas" />
-                <Description onFullscreen={()=>requestFullscreen(true)}/>
+                <Description/>
             </div>
         </>  
 )}
 const Header=()=>{
     return(
         <div>
-            <h2>大きなカブトムシ</h2>
+            <h2>大きなカブトムシ β版</h2>
         </div>
     )
 }
-const Description=({onFullscreen})=>{
+const Description=()=>{
+    const gamePage=()=>window.open("https://unityroom.com/games/bigbeetle")
     return(
         <div>
-            <button onClick={onFullscreen} className="fullscreen-button">全画面で遊ぶ</button>
+            <button onClick={gamePage} className="fullscreen-button">別ページへ</button>
             <h2>ゲーム概要</h2>
             <ul>
-                <li>このゲームは2D横スクロールRUNゲームです。</li>
-                <li>障害物に当たるか、石鹸が小さくなると終わります。</li>
-                <li>石鹸は地面についているとき、水中にいるときに小さくなります。</li>
+                <li>大きなカブが食べられないようにカブトムシを撃退するシューティングゲームです。</li>
+                <li>β版をenableでビルドしていなかったので、unityroomに公開したものを使っています。</li>
             </ul>
             <h2>操作説明</h2>
             <ul>
-                <li>スマホは画面をタップ、PCはSPACEまたは、クリックでスタート</li>
-                <li>赤いゲージが溜まると石鹸がジャンプ</li>
-                <li>水中だとジャンプ力2倍</li>
+                <li>タッチ操作は対応していません。</li>
+                <li>キーボードのみ対応しています。</li>
+                <li>十字キーで移動、スペースキーで通常弾を発射します。</li>
+                <li>Fキー短押しでとまと爆弾を発射します。</li>
+                <li>Fキー長押しでかぼちゃ爆弾を発射します。</li>
             </ul>
             <h2>使用技術</h2>
             <ul>
-                <li>unity,UI Tool Kit,ObjectPool</li>
+                <li>unity,particle</li>
             </ul>
             <h2>制作背景</h2>
             <ul>
-                <li>初めて作ったゲームだったので様々なところで詰まりました。</li>
-                <li>特に印象に残っている詰まったところは当たり判定に関するところです。このゲームの地面はたくさんのタイルマップで作られています。</li>
-                <li>なので、一つ一つのタイルの高さが若干異なり、石鹸の接地判定が取りずらくなっています。</li>
-                <li>これによって、うまくジャンプすることができないバグが生まれました。</li>
-                <li>普通にコライダーを使う方法で安定させることは障害物との接触判定などと干渉してできないので、Raycastを使用しました。</li>
-                <li>これによって、一番の問題だったうまくジャンプできないバグは解決しました。</li>
+                <li>大きなカブとムシというダジャレを思いついて作成しました。</li>
+                <li>通常弾をparticleで作っています。</li>
+                <li>particleを採用した理由は、オブジェクトを一つ一つ生成するより、</li>
+                <li>一つのオブジェクトからparticleを出してまとめて管理するほうが楽だと考えたからです。</li>
+                <li>ですが、情報を集めていくうちに問題があることがわかりました。</li>
+                <li>それは旧particleがCPUを使って処理を行っているということです。</li>
+                <li>なので、非常に負荷がかかります。</li>
+                <li>次からはVisual Effect Graphか、object poolを使用しようと思います。</li>
             </ul>
         </div>
     )
