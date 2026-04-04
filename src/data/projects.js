@@ -24,6 +24,7 @@ import arnavigator_icon from '../assets/arnavigator_icon.png'
 import music_searcher_icon from '../assets/music_searcher_icon.png'
 import kurimanju_icon from '../assets/kurimanju_icon.png'
 import kisyoutenchebu_icon from '../assets/kisyoutenchebu_icon.png'
+import readMaker_icon from '../assets/readMaker_icon.png'
 import limit_diary_icon from '../assets/limit_diary_icon.png'
 import baseball_icon from '../assets/3Dbaseball_icon.png'
 import daychangebattle_icon from '../assets/daychangebattle_icon.png'
@@ -143,6 +144,7 @@ export const data=[
         title:"起承転ちぇぶ",
         icon:kisyoutenchebu_icon,
         description:"",
+        technology:["チーム開発","ハッカソン","unity","LootLocker"],
         path:"https://topaz.dev/projects/823ec14b566f82b8305b"
     },
     {
@@ -152,6 +154,7 @@ export const data=[
     {
         date:"2025年8月",
         title:"readMaker",
+        icon:readMaker_icon,
         description:"",
         technology:["チーム開発","ハッカソン","React Native","TypeScript","Expo"],
         path:"https://github.com/oto1720/2025_ReadMaker"
