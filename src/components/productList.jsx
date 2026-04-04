@@ -34,6 +34,7 @@ export function ProductItem({
     technology=[],
     link
     }){
+        if(link){
     return(
         <Link to={link} className="product-link">
             <h3>{title}</h3>
@@ -47,6 +48,22 @@ export function ProductItem({
             ))}</div>
         </Link>
     )
+}
+else{
+    return(
+        <Link className="product-link">
+            <h3>{title}</h3>
+            <img src={img} alt={title} />
+            <p>{description}</p>
+            <hr className="partition-line"/>
+            <div className="technology-list">{technology.map((tech,index)=>(
+                <span key={index} className="technology-item">
+                    {tech}
+                </span>
+            ))}</div>
+        </Link>
+    )
+}
 }
 
 export default ProductList

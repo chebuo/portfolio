@@ -40,7 +40,7 @@ const Description=()=>{
             </ul>
             <h2>使用技術</h2>
             <ul>
-                <li>JavaScript,A-Flame,AR.js,Google cloud API,gitpages</li>
+                <li>JavaScript,A-Flame,AR.js,Google cloud API,Cloud flare Pages</li>
             </ul>
             <h2>制作背景</h2>
             <ul>

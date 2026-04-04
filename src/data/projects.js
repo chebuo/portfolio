@@ -23,7 +23,12 @@ import arcodemodel_icon from '../assets/arcodemodel_icon.png'
 import arnavigator_icon from '../assets/arnavigator_icon.png'
 import music_searcher_icon from '../assets/music_searcher_icon.png'
 import kurimanju_icon from '../assets/kurimanju_icon.png'
+import kisyoutenchebu_icon from '../assets/kisyoutenchebu_icon.png'
 import limit_diary_icon from '../assets/limit_diary_icon.png'
+import baseball_icon from '../assets/3Dbaseball_icon.png'
+import daychangebattle_icon from '../assets/daychangebattle_icon.png'
+import mymemo_icon from '../assets/mymemo_icon.png'
+import chebuwarts_icon from '../assets/chebuwarts_icon.png'
 
 export const data=[
     {
@@ -135,7 +140,10 @@ export const data=[
     },
     {
         date:"2025年5月",
-        description:"起承転ちぇぶ"
+        title:"起承転ちぇぶ",
+        icon:kisyoutenchebu_icon,
+        description:"",
+        path:"https://topaz.dev/projects/823ec14b566f82b8305b"
     },
     {
         date:"2025年6月",
@@ -143,7 +151,10 @@ export const data=[
     },
     {
         date:"2025年8月",
-        description:"readMaker"
+        title:"readMaker",
+        description:"",
+        technology:["チーム開発","ハッカソン","React Native","TypeScript","Expo"],
+        path:"https://github.com/oto1720/2025_ReadMaker"
     },
     {
         date:"2025年8月",
@@ -156,15 +167,23 @@ export const data=[
     },
     {
         date:"2025年8月",
-        description:"3Dbaseball"
+        title:"3D野球盤",
+        icon:baseball_icon,
+        description:"3Dbaseball",
+        technology:["チーム開発","React","TypeScript","three.js","vrm","vercel"],
+        path:"https://topaz.dev/projects/203a12f0e3847d71c3cd"
     },
     {
         date:"2025年9月",
-        description:"memobattle"
+        title:"memobattle",
+        icon:daychangebattle_icon,
+        description:"",
+        technology:["チーム開発","ハッカソン","html","css","javascript","firebase","firestore"],
+        path:"https://topaz.dev/projects/abe903ec92ba26ec9128"
     },
     {
         date:"2025年10月",
-        description:"入退室管理"
+        description:"入退室管理bot"
     },
     {
         date:"2026年1月",
@@ -177,7 +196,11 @@ export const data=[
     },
     {
         date:"2026年2月",
-        description:"mymemo"
+        title:"MyMemo",
+        icon:mymemo_icon,
+        description:"mymemo",
+        technology:["チーム開発","chrome","React","JavaScript","node.js","supabase","render"],
+        path:"https://topaz.dev/projects/87928934cc46cbeb3056"
     },
     {
         date:"2026年3月",
@@ -185,6 +208,10 @@ export const data=[
     },
     {
         date:"2026年3月",
-        description:"チェブわーつレガシー",
+        title:"チェブわーつレガシー",
+        icon:chebuwarts_icon,
+        description:"",
+        technology:["チーム開発","ハッカソン","unity","VR"],
+        path:"https://topaz.dev/projects/9ae51df3f2987dd2d0b5"
     }
 ]
