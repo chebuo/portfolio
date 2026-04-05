@@ -17,7 +17,7 @@ const Header=()=>{
     )
 }
 const Description=()=>{
-    const gamePage=()=>window.open("https://unityroom.com/games/bigbeetle")
+    const gamePage=()=>window.open("https://unityroom.com/games/bigbeetle_beta","_blank")
     return(
         <div>
             <button onClick={gamePage} className="fullscreen-button">別ページへ</button>
